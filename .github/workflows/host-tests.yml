@@ -1,0 +1,26 @@
+name: Host tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  controller-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build controller tests
+        run: >-
+          g++ -std=c++14 -Wall -Wextra -Werror
+          Tests/file_manager_controller_tests.cpp
+          App/Src/file_manager_controller.cpp
+          -IApp/Inc
+          -o /tmp/file_manager_controller_tests
+
+      - name: Run controller tests
+        run: /tmp/file_manager_controller_tests

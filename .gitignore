@@ -1,0 +1,27 @@
+# STM32CubeIDE build output
+/Debug/
+/Release/
+/.metadata/
+
+# Host-side test binaries
+/Tests/*.exe
+
+# Compiler and linker artifacts
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.hex
+*.bin
+*.map
+*.list
+*.log
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.bak
+*~
